@@ -1,0 +1,46 @@
+name: Bug report
+description: Something does not work as documented.
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please search existing issues first.
+        **Security problems:** do not open an issue, see SECURITY.md.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: A minimal request, code snippet or command that shows the problem.
+      placeholder: |
+        1. Start the server with `npm start`
+        2. Send `curl ...`
+        3. See error
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: v1.0.0 or a commit SHA
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: Node 22.18, macOS 15 / Docker / Vercel
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Relevant log output. It is formatted as code automatically.
+      render: shell
